@@ -7,3 +7,7 @@ void VideoG::setRating(int outRating){
   cout << rating<< endl;
   return;
 }
+void VideoG::print(){
+  cout << "Year: " << year << "publisher: " << publisher << "Title: " << title << "Rating: " << rating << endl;
+  return;
+}

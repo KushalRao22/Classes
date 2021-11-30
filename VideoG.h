@@ -6,5 +6,5 @@ class VideoG : public Media{
  public:
   void setRating(int rating);
   int rating;
-  
+  virtual void print();
 };

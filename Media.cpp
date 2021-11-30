@@ -15,6 +15,17 @@ void Media::setYear(int outYear){
   cout << year << endl;
 }
 
+void Media::getTitle(char* outStr){
+  cout << "Checking Title" << endl;
+  for(int i = 0; i <sizeof(title); i++){
+    outStr[i] = title[i];
+  }
+}
+
+void Media::print(){
+  cout << year << endl;
+}
+
 
 void Media::setPublisher(char* outPublisher){
   for(int i = 0; i < 60; i++){
