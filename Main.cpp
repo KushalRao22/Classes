@@ -12,6 +12,7 @@ int main(){
   char input[7];
   char input2[3];
   char charInput[60];
+  char charInput2[60];
   char checkArray[60];
   int  intInput;
   while(!quit){
@@ -103,7 +104,20 @@ int main(){
       }
     }
     else if(strcmp(input,"DELETE") == 0){
-      
+      cout << "What is the title of the media you wish to delete?" << endl;
+      cin >> charInput;
+	for(int i = 0; i < artPieces.size(); i++){
+	  artPieces[i]->getTitle(checkArray);
+	  if(strcmp(checkArray, charInput) == 0){
+	    artPieces[i]->print();
+	    cout << "Confirm Delete? (Y/N)" << endl;
+	    cin >> charInput2;
+	    if(strcmp(charInput2, "Y") == 0){
+	      artPieces.erase(artPieces.begin() + i);
+	    }
+
+	  }
+	}
     }
     else if(strcmp(input,"QUIT") == 0){
       quit = true;
