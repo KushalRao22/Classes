@@ -77,14 +77,25 @@ int main(){
     }
     else if(strcmp(input,"SEARCH") == 0){
       cout << "Do you want to search by title or year?(T ot Y)" << endl;
-      if(strcmp(input2, "T")){
+      cin >> input2;
+      if(strcmp(input2, "T") == 0){
 	cout << "What is the Title" << endl;
 	cin >> charInput;
 	for(int i = 0; i < artPieces.size(); i++){
 	  artPieces[i]->getTitle(checkArray);
 	  cout << checkArray << endl;
 	  cout << charInput << endl;
-	  if(strcmp(checkArray, charInput)){
+	  if(strcmp(checkArray, charInput) == 0){
+	    cout << "IF" << endl;
+	    artPieces[i]->print();
+	  }
+	}
+      }
+      else{
+	cout << "What is the year?" << endl;
+	cin >> intInput;
+	for(int i = 0; i < artPieces.size(); i++){
+	  if(artPieces[i]->getYear() == intInput){
 	    cout << "IF" << endl;
 	    artPieces[i]->print();
 	  }

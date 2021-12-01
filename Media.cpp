@@ -22,6 +22,11 @@ void Media::getTitle(char* outStr){
   }
 }
 
+int Media::getYear(){
+  cout << "Check Year" << endl;
+  return year;
+}
+
 void Media::print(){
   cout << year << endl;
 }
