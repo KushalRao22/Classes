@@ -57,7 +57,7 @@ int main(){//Main loop
 	cout<< "set Publisher" << endl;
 	cin >> charInput;
 	media->setPublisher(charInput);//Set the publisher of the song
-	cout<< "setArtist" << endl;
+	cout<< "set Artist" << endl;
 	cin >> charInput;
 	media->setArtist(charInput);//Set the artist
 	cout << "Set Duration" << endl;
@@ -73,10 +73,10 @@ int main(){//Main loop
 	cout << "Set year" << endl;
 	cin >> intInput;
 	media-> setYear(intInput);//Set year
-	cout<< "setPublisher" << endl;
+	cout<< "set Publisher" << endl;
 	cin >> charInput;
 	media->setPublisher(charInput);// Set the publisher of the movie
-	cout<< "setDirector" << endl;
+	cout<< "set Director" << endl;
 	cin >> charInput;
 	media->setDirector(charInput);//Set the director
 	cout << "Set Duration" << endl;
@@ -109,8 +109,11 @@ int main(){//Main loop
       }
     }
     else if(strcmp(input,"DELETE") == 0){//If user wants to delete
-      cout << "What is the title of the media you wish to delete?" << endl;
-      cin >> charInput;
+      cout << "Do you want to search by title or year?(T ot Y)" << endl;
+      cin >> input2;
+      if(strcmp(input2, "T") == 0){//Search by Title
+	cout << "What is the title of the media you wish to delete?" << endl;
+	cin >> charInput;
 	for(int i = 0; i < artPieces.size(); i++){
 	  artPieces[i]->getTitle(checkArray);//Set check array to the title of the specific media
 	  if(strcmp(checkArray, charInput) == 0){
@@ -121,9 +124,26 @@ int main(){//Main loop
 	      delete artPieces.at(i);//Delete media from heap
 	      artPieces.erase(artPieces.begin() + i);//Remove pointer
 	    }
-
 	  }
 	}
+      }
+      else{
+	cout << "What is the year of the media you wish to delete?" << endl;//Get year
+	cin >> intInput;
+	for(int i = 0; i < artPieces.size(); i++){
+	  if(artPieces[i]->getYear() == intInput){//If year is the same as input
+	    artPieces[i]->print();
+	    cout << "Confirm Delete? (Y/N)" << endl;//Ask for confirmation
+	    cin >> charInput2;
+	    if(strcmp(charInput2, "Y") == 0){//If user confirms
+	      delete artPieces.at(i);//Delete media from heap
+	      artPieces.erase(artPieces.begin() + i);//Remove pointer
+	    }
+	  }
+      }
+
+
+      
     }
     else if(strcmp(input,"QUIT") == 0){//If user wants to quit
       quit = true;
