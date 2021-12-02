@@ -140,10 +140,8 @@ int main(){//Main loop
 	      artPieces.erase(artPieces.begin() + i);//Remove pointer
 	    }
 	  }
+	}
       }
-
-
-      
     }
     else if(strcmp(input,"QUIT") == 0){//If user wants to quit
       quit = true;
