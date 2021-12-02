@@ -1,13 +1,20 @@
+/*
+This is a program that holds Video games
+
+Last modified: 12/2/21
+
+By: Kushal Rao
+*/
+//Includes
 #include <iostream>
 #include "VideoG.h"
 using namespace std;
 
-void VideoG::setRating(int outRating){
+void VideoG::setRating(int outRating){//Set rating to input
   rating = outRating;
-  cout << rating<< endl;
   return;
 }
-void VideoG::print(){
-  cout << "Year: " << year << "publisher: " << publisher << "Title: " << title << "Rating: " << rating << endl;
+void VideoG::print(){//Print
+  cout << "Title: " << title << endl << "Year: " << year << endl << "Publisher: " << publisher << endl << "Rating: " << rating << endl << endl;
   return;
 }
